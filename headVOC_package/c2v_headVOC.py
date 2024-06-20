@@ -10,6 +10,7 @@ def PPMtoConcMole(ppm, mw):
 
 def concToPP(Conc, R, K):
     # Convert concentration (moles) to partial pressure with ideal gas constant (L*atm/mol*K) and temperature (K)
+    # 22.47L is already incorporated in the concentration definition
     VPP = Conc * R * K
     return VPP
 
@@ -70,6 +71,7 @@ def calc_v2c(voc_specie, dilute_med:str):
     R = std_conditions['ideal_gas_constant']
     K = std_conditions['temperature']
     tATM = std_conditions['total_pressure']
+    satp_V = std_conditions['satp_volume']
 
     # i.e., VOC diluted in water
     diluteRho = dilute['density'] # density of water (g/L)

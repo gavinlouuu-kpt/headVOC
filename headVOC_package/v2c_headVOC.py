@@ -27,6 +27,9 @@ R = 0.0821
 # Temperature (K)
 K = 298.15
 
+# Volume of gas under SATP
+satp_V = 22.4
+
 # Total pressure (atm)
 tATM = 1
 
@@ -57,7 +60,8 @@ def vocPP(X, VP, tATM ):
     return VPP
 
 def concMole(VPP, R, K):
-    cM = VPP / (R * K)
+    n = VPP / (R * K)
+    cM = n / satp_V
     return cM
 
 def volToMole(vol, rho, mw):

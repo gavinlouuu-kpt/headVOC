@@ -1,8 +1,6 @@
 import headVOC_package
-from headVOC_package import c2v_headVOC, v2c_headVOC
+from headVOC_package import c2v_headVOC as c2v
 
 # Create a c2v_headVOC object
-c2v = c2v_headVOC()
-# Create a v2c_headVOC object
-v2c = v2c_headVOC()
 
+c2v.calc_v2c('acetone','water')
